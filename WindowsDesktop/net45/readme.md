@@ -1,5 +1,5 @@
-theidentityhub-demo
-======================
+theidentityhub-demo - Windows Desktop
+=====================================
 
 The Identity Hub makes it easy to connect your app to all major identity providers like Microsoft, Facebook, Google, Twitter, Linked In and more. For more information visit [The Identity Hub](https://www.theidentityhub.com)
 
