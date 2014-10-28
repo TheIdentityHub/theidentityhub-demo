@@ -1,0 +1,43 @@
+﻿@using TheIdentityHub;
+@model U2UConsult.AspNetMvcDemo.Models.IndexModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>The Identity Hub</h1>
+    <p class="lead">The Identity Hub allows your users to sign in to your iOS, Android, Windows, Web and Sharepoint Apps using Facebook, ADFS, Office 365, Twitter and more. We support OAuth and WS-Federation and provide a rich API to access aggregated user information.</p>
+    <p><a href="https://www.theidentityhub.com" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>My Profile</h2>
+        <p>
+            Name: @this.User.DisplayName()
+        </p>
+        <p>
+            <img src="@this.User.LargePicture()" />
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>My Accounts</h2>
+        @foreach (var accountProvider in this.Model.AccountProviders)
+        {
+            if (accountProvider.Accounts.Length > 0)
+            {
+                <img style="max-height:40px;" src="@accountProvider.ProviderImageUrl" />
+                <img style="max-height:40px;" src="@accountProvider.Accounts.First().PictureUrl" />
+                @accountProvider.Accounts.First().DisplayName
+            }
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>My Friends</h2>
+        @foreach (var friend in this.Model.Friends)
+        {
+            @friend.DisplayName
+            <img style="max-height:40px;" src="@friend.Picture.AbsoluteUri" />
+        }
+    </div>
+</div>
