@@ -94,7 +94,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
-    <None Include="packages\TheIdentityHub.WindowsDesktop.1.0.0\TheIdentityHub.WindowsDesktop.1.0.0.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,10 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages\TheIdentityHub.WindowsDesktop.1.0.0\content\readme.txt" />
-    <Content Include="packages\TheIdentityHub.WindowsDesktop.1.0.0\lib\net45\TheIdentityHub.WindowsSdk45.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
