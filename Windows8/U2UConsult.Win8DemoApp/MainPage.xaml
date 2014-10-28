@@ -1,0 +1,151 @@
+﻿<Page
+    x:Class="U2UConsult.Win8DemoApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:U2UConsult.Win8DemoApp"
+    xmlns:converters="using:U2UConsult.Win8DemoApp.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="booleanVisibility"/>
+        <converters:BooleanToVisibilityConverter x:Key="reverseBooleanVisibility" Reverse="True"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Height="140" VerticalAlignment="Top">
+            <TextBlock Margin="120 0 30 40" Text="Windows 8 Client Demo App" VerticalAlignment="Bottom" 
+                   FontSize="56" FontWeight="Light" LineHeight="40" LineStackingStrategy="BlockLineHeight"/>
+        </Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
+                      ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollMode="Disabled"
+                      ScrollViewer.ZoomMode="Disabled">
+            <Grid Margin="120 140 120 40" >
+                <Grid Width="300" Visibility="{Binding IdentityService.IsAuthenticated, Converter={StaticResource reverseBooleanVisibility}}" HorizontalAlignment="Left">
+                    <StackPanel>
+                        <TextBlock Text="Sign in" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0 0 0 10" />
+                        <TextBlock Text="You are not signed in." Style="{StaticResource BodyTextBlockStyle}" />
+                        <Button Content="Sign in" Margin="0 10" Background="Olive" Click="SignIn" />
+                    </StackPanel>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding IdentityService.IsAuthenticated, Converter={StaticResource booleanVisibility}}" HorizontalAlignment="Left">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Profile.DisplayName}" Style="{StaticResource SubheaderTextBlockStyle }" Margin="0 0 0 10"/>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1">
+                            <StackPanel>
+                                <Image Source="{Binding Profile.Picture}" Width="400" />
+                                <Button Content="Sign out" Margin="0 10" Background="Olive" Click="SignOut" />
+                                <Button Content="Refresh" Margin="0 10" Background="Olive" Click="Refresh" />
+                                <Button Content="Require two-factor authentication" Margin="0 10" Background="Olive" Click="RequireTwoFactorAuthentication" />
+                            </StackPanel>
+                            <StackPanel Margin="10 0 0 0" DataContext="{Binding Profile}">
+                                <TextBlock Style="{StaticResource BodyTextBlockStyle}" >
+                                Given Name: <Run Text="{Binding GivenName}"/>
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource BodyTextBlockStyle}" >
+                                Surname: <Run Text="{Binding Surname}"/>
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource BodyTextBlockStyle}" >
+                                Email address: <Run Text="{Binding EmailAddress}"/>
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource BodyTextBlockStyle}" >
+                                Email address verified: <Run Text="{Binding EmailAddressVerified}"/>
+                                </TextBlock>
+                                <TextBlock Style="{StaticResource BodyTextBlockStyle}" >
+                                Identity id: <Run Text="{Binding IdentityId}"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="40 0 0 0" MinWidth="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Friends" Style="{StaticResource SubheaderTextBlockStyle }" Margin="0 0 0 10"/>
+                        <ItemsControl Grid.Row="1" ItemsSource="{Binding Friends}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Width="400" Height="100">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Border Background="DarkGray" Grid.RowSpan="2">
+                                            <Image Source="{Binding SmallPicture}" Stretch="UniformToFill" VerticalAlignment="Top" />
+                                        </Border>
+                                        <TextBlock Text="{Binding DisplayName}" Style="{StaticResource BodyTextBlockStyle}" Grid.Column="2"/>
+                                        <TextBlock Style="{StaticResource BodyTextBlockStyle}" Grid.Row="1" Grid.Column="2">
+                                            Identity id: <Run Text="{Binding IdentityId}"/>
+                                        </TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                    <Grid Margin="40 0 0 0" MinWidth="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Accounts" Style="{StaticResource SubheaderTextBlockStyle }" Margin="0 0 0 10"/>
+                        <ItemsControl ItemsSource="{Binding AccountProviders}" Grid.Row="1">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Width="300" Margin="0 0 10 0">
+                                        <Image Source="{Binding ProviderImageUrl}" Width="300" Height="60" HorizontalAlignment="Left" />
+                                        <!--<TextBlock Text="{Binding DisplayName}" Style="{StaticResource SubtitleTextBlockStyle}" />-->
+                                        <ItemsControl ItemsSource="{Binding Accounts}" Margin="0 20 0 0">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Width="300" Height="100">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="100"/>
+                                                            <ColumnDefinition Width="10"/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Border Background="DarkGray" Grid.RowSpan="2">
+                                                            <Image Source="{Binding PictureUrl}" Stretch="UniformToFill" VerticalAlignment="Top" />
+                                                        </Border>
+                                                        <TextBlock Text="{Binding DisplayName}" Style="{StaticResource BodyTextBlockStyle}" Grid.Column="2"/>
+                                                        <TextBlock Text="{Binding EmailAddress}" Style="{StaticResource BodyTextBlockStyle}" Grid.Row="1" Grid.Column="2"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        <Button Content="Add Account" Tag="{Binding}" Margin="0 10" Background="Olive" Click="AddAccount" VerticalAlignment="Top" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+        <ContentControl x:Name="progress" IsEnabled="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                        Visibility="{Binding ElementName=progress, Path=IsEnabled, Converter={StaticResource booleanVisibility}}">
+            <Border Background="#8000">
+                <ProgressRing Width="100" Height="100" IsActive="{Binding ElementName=progress, Path=IsEnabled}" />
+            </Border>
+        </ContentControl>
+    </Grid>
+</Page>

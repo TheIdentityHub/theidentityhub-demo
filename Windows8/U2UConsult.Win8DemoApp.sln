@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U2UConsult.Win8DemoApp", "U2UConsult.Win8DemoApp\U2UConsult.Win8DemoApp.csproj", "{C244B485-5F61-4341-B54C-4B25776D961C}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "U2UConsult.Win8DemoApp.Shared", "U2UConsult.Win8DemoApp.Shared\U2UConsult.Win8DemoApp.Shared.shproj", "{AFF3E5EF-8F4E-4432-948B-009956647966}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3F5F8CF2-2E8E-4E01-BC96-2C18D1FFEB59}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		U2UConsult.Win8DemoApp.Shared\U2UConsult.Win8DemoApp.Shared.projitems*{c244b485-5f61-4341-b54c-4b25776d961c}*SharedItemsImports = 4
+		U2UConsult.Win8DemoApp.Shared\U2UConsult.Win8DemoApp.Shared.projitems*{aff3e5ef-8f4e-4432-948b-009956647966}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Azure.Beta|Any CPU = Azure.Beta|Any CPU
+		Azure.Beta|ARM = Azure.Beta|ARM
+		Azure.Beta|x64 = Azure.Beta|x64
+		Azure.Beta|x86 = Azure.Beta|x86
+		Azure.Prod|Any CPU = Azure.Prod|Any CPU
+		Azure.Prod|ARM = Azure.Prod|ARM
+		Azure.Prod|x64 = Azure.Prod|x64
+		Azure.Prod|x86 = Azure.Prod|x86
+		Azure.Test|Any CPU = Azure.Test|Any CPU
+		Azure.Test|ARM = Azure.Test|ARM
+		Azure.Test|x64 = Azure.Test|x64
+		Azure.Test|x86 = Azure.Test|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|Any CPU.ActiveCfg = Azure.Beta|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|Any CPU.Build.0 = Azure.Beta|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|Any CPU.Deploy.0 = Azure.Beta|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|ARM.ActiveCfg = Azure.Beta|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|ARM.Build.0 = Azure.Beta|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|ARM.Deploy.0 = Azure.Beta|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|x64.ActiveCfg = Azure.Beta|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|x64.Build.0 = Azure.Beta|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|x64.Deploy.0 = Azure.Beta|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|x86.ActiveCfg = Azure.Beta|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|x86.Build.0 = Azure.Beta|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Beta|x86.Deploy.0 = Azure.Beta|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|Any CPU.ActiveCfg = Azure.Prod|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|Any CPU.Build.0 = Azure.Prod|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|Any CPU.Deploy.0 = Azure.Prod|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|ARM.ActiveCfg = Azure.Prod|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|ARM.Build.0 = Azure.Prod|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|ARM.Deploy.0 = Azure.Prod|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|x64.ActiveCfg = Azure.Prod|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|x64.Build.0 = Azure.Prod|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|x64.Deploy.0 = Azure.Prod|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|x86.ActiveCfg = Azure.Prod|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|x86.Build.0 = Azure.Prod|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Prod|x86.Deploy.0 = Azure.Prod|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|Any CPU.ActiveCfg = Azure.Test|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|Any CPU.Build.0 = Azure.Test|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|Any CPU.Deploy.0 = Azure.Test|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|ARM.ActiveCfg = Azure.Test|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|ARM.Build.0 = Azure.Test|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|ARM.Deploy.0 = Azure.Test|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|x64.ActiveCfg = Azure.Test|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|x64.Build.0 = Azure.Test|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|x64.Deploy.0 = Azure.Test|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|x86.ActiveCfg = Azure.Test|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|x86.Build.0 = Azure.Test|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Azure.Test|x86.Deploy.0 = Azure.Test|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|ARM.Build.0 = Debug|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|ARM.Deploy.0 = Debug|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|x64.ActiveCfg = Debug|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|x64.Build.0 = Debug|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|x64.Deploy.0 = Debug|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|x86.ActiveCfg = Debug|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|x86.Build.0 = Debug|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Debug|x86.Deploy.0 = Debug|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|ARM.ActiveCfg = Release|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|ARM.Build.0 = Release|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|ARM.Deploy.0 = Release|ARM
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|x64.ActiveCfg = Release|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|x64.Build.0 = Release|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|x64.Deploy.0 = Release|x64
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|x86.ActiveCfg = Release|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|x86.Build.0 = Release|x86
+		{C244B485-5F61-4341-B54C-4B25776D961C}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
