@@ -21,7 +21,7 @@ namespace U2UConsult.WindowsDemoApp45
         /// <summary>
         /// The identity service.
         /// </summary>
-        private IdentityService identityService = new IdentityService("[Your App Client Id]", new Uri("https://www.theidentityhub.com/[Your Tenant Name]"));
+        private IdentityService identityService = new IdentityService("[Your App Client Id]", new Uri("[Your Tenant]"));
 
         /// <summary>
         /// The profile.
