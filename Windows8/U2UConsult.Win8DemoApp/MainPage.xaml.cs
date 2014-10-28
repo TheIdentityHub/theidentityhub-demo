@@ -19,12 +19,12 @@ namespace U2UConsult.Win8DemoApp
         /// <summary>
         /// The client identifier.
         /// </summary>
-        private const string clientId = "4824062250562640119";
+        private const string clientId = "[Your Client Id]";
 
         /// <summary>
         /// The base URL.
         /// </summary>
-        private static readonly Uri baseUrl = new Uri("https://theidentityhubtest.cloudapp.net/demo2/");
+        private static readonly Uri baseUrl = new Uri("[Your Tenant]");
 
         /// <summary>
         /// The view model.
