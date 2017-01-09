@@ -1,0 +1,72 @@
+﻿@using TheIdentityHub;
+<br />
+<div class="row">
+    <div class="col-md-4">
+        @if (this.User != null)
+        {
+            if (this.User.Identity != null)
+            {
+                <b>this.User.Identity.Name:</b> <span>@this.User.Identity.Name</span>
+                <br />
+                <br />
+                <b>this.User.Identity.AuthenticationType:</b><span>@this.User.Identity.AuthenticationType</span>
+                <br />
+                <br />
+                <b>this.User.Identity.IsAuthenticated:</b><span>@this.User.Identity.IsAuthenticated</span>
+            }
+            if (this.User.IsIdentified())
+            {
+                <br />
+                <br />
+                <b>this.User.AccessToken():</b><span>@this.User.AccessToken()</span>
+                <br />
+                <br />
+                <b>this.User.AuthenticationStrength():</b><span>@this.User.AuthenticationStrength()</span>
+                <br />
+                <br />
+                <b>this.User.DisplayName():</b><span>@this.User.DisplayName()</span>
+                <br />
+                <br />
+                <b>this.User.EmailAddress():</b><span>@this.User.EmailAddress()</span>
+                <br />
+                <br />
+                <b>this.User.IdentityId():</b><span>@this.User.IdentityId()</span>
+                <br />
+                <br />
+                <b>this.User.IsIdentified():</b><span>@this.User.IsIdentified()</span>
+                <br />
+                <br />
+                <b>this.User.Name():</b><span>@this.User.Name()</span>
+                <br />
+                <br />
+            }
+        }
+    </div>
+    <div class="col-md-4">
+        <b>Pictures:</b>
+        @if (this.User != null)
+        {
+            <br />
+            <br />
+            <img src="@this.User.SmallPicture()" />
+            <br />
+            <br />
+            <img src="@this.User.MediumPicture()" />
+            <br />
+            <br />
+            <img src="@this.User.LargePicture()" />
+        }
+    </div>
+    <div class="col-md-4">
+        <b>Roles:</b>
+        @if (this.User != null)
+        {
+            <br />
+            <br />
+            foreach (var role in this.User.Roles() ?? new string[0])
+            {
+                <span>@role</span><br /><br />
+            }
+        }
+    </div>
+</div>

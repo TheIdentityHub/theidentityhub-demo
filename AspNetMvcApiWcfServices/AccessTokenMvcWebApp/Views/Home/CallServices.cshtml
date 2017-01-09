@@ -1,0 +1,66 @@
+﻿@using TheIdentityHub;
+@model dynamic
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <b>Call MVC Web API with Basic Authentication</b>
+        <br />
+        <br />
+        @using (Html.BeginForm("CallBasicAuthMvcWebApiService", "Home", FormMethod.Post))
+            {
+            <span>Username</span> <input type="text" id="username" name="username" value="5146458342142355125" />
+            <br />
+            <br />
+            <span>Password</span> <input type="password" id="password" name="password" value="v1d39P46ldSwrVa0fDUhAQ==" />
+            <br />
+            <br />
+            <input type="submit" value="Call Web API" />
+        }
+        <br />
+        <br />
+        <b>Call WCF Service with Basic Authentication</b>
+        <br />
+        <br />
+        @using (Html.BeginForm("CallBasicAuthWcfService", "Home", FormMethod.Post))
+            {
+            <span>Username</span> <input type="text" id="username" name="username" value="5146458342142355125" />
+            <br />
+            <br />
+            <span>Password</span> <input type="password" id="password" name="password" value="v1d39P46ldSwrVa0fDUhAQ==" />
+            <br />
+            <br />
+            <input type="submit" value="Call WCF" />
+        }
+        <br />
+        <br />
+        <b>Call MVC Web API with App Token</b>
+        <br />
+        <br />
+        @using (Html.BeginForm("CallAppTokenMvcApiService", "Home", FormMethod.Post))
+            {
+            <input type="submit" value="Call Web API" />
+        }
+        <br />
+        <br />
+        <b>Call WCF Service with App Token</b>
+        <br />
+        <br />
+        @using (Html.BeginForm("CallAppTokenWcfService", "Home", FormMethod.Post))
+            {
+            <input type="submit" value="Call WCF" />
+        }
+        <br />
+        <br />
+        <b>Call MVC Web API with Access Token</b>
+        <br />
+        <br />
+        @using (Html.BeginForm("CallAccessTokenMvcApiService", "Home", FormMethod.Post))
+            {
+            <input type="submit" value="Call web API" />
+        }
+        <p>
+            <br />
+            <span>Result:</span> @(this.Model != null ? this.Model.Result : string.Empty)
+        </p>
+    </div>
+</div>

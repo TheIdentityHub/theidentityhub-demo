@@ -1,0 +1,57 @@
+﻿@using TheIdentityHub;
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <b>this.User.Identity.Name</b>: @this.User.Identity.Name
+        <br />
+        <br />
+        <b>this.User.Identity.AuthenticationType</b>: @this.User.Identity.AuthenticationType
+        <br />
+        <br />
+        <b>this.User.Identity.IsAuthenticated</b>: @this.User.Identity.IsAuthenticated
+        <br />
+        <br />
+        <b>this.User.AccessToken()</b>: @this.User.AccessToken()
+        <br />
+        <br />
+        <b>this.User.AuthenticationStrength()</b>: @this.User.AuthenticationStrength()
+        <br />
+        <br />
+        <b>this.User.DisplayName()</b>: @this.User.DisplayName()
+        <br />
+        <br />
+        <b>this.User.EmailAddress()</b>: @this.User.EmailAddress()
+        <br />
+        <br />
+        <b>this.User.IdentityId()</b>: @this.User.IdentityId()
+        <br />
+        <br />
+        <b>this.User.IsIdentified()</b>: @this.User.IsIdentified()
+        <br />
+        <br />
+        <b>this.User.Name()</b>: @this.User.Name()
+        <br />
+        <br />
+    </div>
+    <div class="col-md-4">
+        <b>Pictures:</b>
+        <br />
+        <br />
+        <img src="@this.User.SmallPicture()" />
+        <br />
+        <br />
+        <img src="@this.User.MediumPicture()" />
+        <br />
+        <br />
+        <img src="@this.User.LargePicture()" />
+    </div>
+    <div class="col-md-4">
+        <b>Roles:</b>
+        <br />
+        <br />
+        @foreach (var role in this.User.Roles())
+        {
+            <span>@role</span><br /><br />
+        }
+    </div>
+</div>
